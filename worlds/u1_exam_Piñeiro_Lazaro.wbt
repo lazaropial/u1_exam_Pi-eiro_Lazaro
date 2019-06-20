@@ -149,6 +149,9 @@ Solid {
           jointParameters HingeJointParameters {
             axis 0 1 0
             anchor -0.1 0.25 0
+            minStop -1.5708
+            maxStop 1.5708
+            springConstant 3
           }
           endPoint Solid {
             translation -0.2 0.25 0
