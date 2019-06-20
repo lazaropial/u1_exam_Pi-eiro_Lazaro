@@ -2,8 +2,8 @@
 WorldInfo {
 }
 Viewpoint {
-  orientation 1 0 0 4.71238898038469
-  position 0.06465005295232594 2.0457165238387334 0.015186939809843255
+  orientation -0.8681675098626951 0.4733668398735644 0.14902687585439914 0.6957630406199924
+  position 0.5191493917312758 1.4424545889601466 1.5609258323183066
 }
 TexturedBackground {
 }
@@ -12,7 +12,7 @@ TexturedBackgroundLight {
 Floor {
 }
 Solid {
-  translation 0 0.7 0
+  translation 0 0.8 0
   children [
     Group {
       children [
@@ -66,6 +66,49 @@ Solid {
             Shape {
               appearance USE RED
               geometry USE CY_B
+            }
+          ]
+        }
+        DEF CY_MEDIA Transform {
+          translation 0 -0.4 0.15
+          rotation 0 0 1 1.5707996938995747
+          children [
+            Shape {
+              appearance USE RED
+              geometry DEF CY_M Cylinder {
+                height 0.30000000000000004
+                radius 0.01
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0 -0.4 -0.15
+          rotation 0 0 1 1.5707996938995747
+          children [
+            Shape {
+              appearance USE RED
+              geometry USE CY_M
+            }
+          ]
+        }
+        Transform {
+          translation 0.15 -0.4 0
+          rotation 1 0 0 1.5707996938995747
+          children [
+            Shape {
+              appearance USE RED
+              geometry USE CY_M
+            }
+          ]
+        }
+        Transform {
+          translation -0.15 -0.4 0
+          rotation 1 0 0 1.5707996938995747
+          children [
+            Shape {
+              appearance USE RED
+              geometry USE CY_M
             }
           ]
         }
