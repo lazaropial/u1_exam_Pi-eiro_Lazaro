@@ -2,8 +2,8 @@
 WorldInfo {
 }
 Viewpoint {
-  orientation 0 1 0 0
-  position -0.2 1.05 0.9802350106077637
+  orientation -0.05813940765333852 0.996512057777444 0.05986257580394593 1.6034923641711518
+  position 0.6173840111032023 1.1025541583953877 -0.010359203660912324
 }
 TexturedBackground {
 }
@@ -134,11 +134,13 @@ Solid {
         }
         Transform {
           translation 0 0.25 0
+          rotation 0 0 1 1.5707996938995747
           children [
             Shape {
               appearance USE GREEN
-              geometry Box {
-                size 0.2 0.05 0.1
+              geometry Cylinder {
+                height 0.2
+                radius 0.05
               }
             }
           ]
@@ -159,7 +161,101 @@ Solid {
                   radius 0.02
                 }
               }
+              Transform {
+                translation 0 0.14 0
+                children [
+                  Shape {
+                    appearance USE GREEN
+                    geometry Box {
+                      size 0.08 0.08 0.01
+                    }
+                  }
+                ]
+              }
             ]
+            physics Physics {
+            }
+          }
+        }
+        HingeJoint {
+          jointParameters HingeJointParameters {
+            anchor 0.11 0.25 0
+          }
+          endPoint Solid {
+            translation 0.11 0.25 0
+            rotation 0 0 1 1.5707996938995745
+            children [
+              Shape {
+                appearance USE GREEN
+                geometry Cylinder {
+                  height 0.02
+                  radius 0.03
+                }
+              }
+              Transform {
+                translation 0.07 0 0
+                rotation 0 0 1 1.5707996938995747
+                children [
+                  DEF ASPA Shape {
+                    appearance USE GREEN
+                    geometry Cylinder {
+                      height 0.1
+                      radius 0.01
+                    }
+                  }
+                ]
+              }
+              Transform {
+                translation -0.07 0 0
+                rotation 0 0 1 1.5707996938995747
+                children [
+                  USE ASPA
+                ]
+              }
+              Transform {
+                translation 0 0 0.07
+                rotation 1 0 0 1.5708003061004252
+                children [
+                  USE ASPA
+                ]
+              }
+              Transform {
+                translation 0 0 -0.07
+                rotation 1 0 0 1.5708003061004252
+                children [
+                  USE ASPA
+                ]
+              }
+              Transform {
+                translation 0.05 0 -0.05
+                rotation 0.7071067811865475 0 0.7071067811865475 1.5707996938995747
+                children [
+                  USE ASPA
+                ]
+              }
+              Transform {
+                translation -0.05 0 0.05
+                rotation 0.7071067811865475 0 0.7071067811865475 1.5708003061004252
+                children [
+                  USE ASPA
+                ]
+              }
+              Transform {
+                translation 0.05 0 0.05
+                rotation -0.7071067811865475 0 0.7071067811865475 1.5707996938995747
+                children [
+                  USE ASPA
+                ]
+              }
+              Transform {
+                translation -0.05 0 -0.05
+                rotation -0.7071067811865475 0 0.7071067811865475 1.5707996938995747
+                children [
+                  USE ASPA
+                ]
+              }
+            ]
+            name "solid(1)"
             physics Physics {
             }
           }
