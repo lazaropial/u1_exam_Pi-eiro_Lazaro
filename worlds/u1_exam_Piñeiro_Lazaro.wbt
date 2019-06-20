@@ -2,8 +2,8 @@
 WorldInfo {
 }
 Viewpoint {
-  orientation -0.05813940765333852 0.996512057777444 0.05986257580394593 1.6034923641711518
-  position 0.6173840111032023 1.1025541583953877 -0.010359203660912324
+  orientation 0.1146100490422639 0.9909776957512155 -0.06948196299861648 1.0980525008779043
+  position 1.2473122029658248 1.0204947882275663 0.6025549116630813
 }
 TexturedBackground {
 }
@@ -247,11 +247,40 @@ Solid {
                   USE ASPA
                 ]
               }
-              Transform {
+              DEF CY Transform {
                 translation -0.05 0 -0.05
                 rotation -0.7071067811865475 0 0.7071067811865475 1.5707996938995747
                 children [
                   USE ASPA
+                ]
+              }
+              Transform {
+                translation 0.14 0 0
+                children [
+                  DEF A Shape {
+                    appearance USE GREEN
+                    geometry Box {
+                      size 0.04 0.01 0.04
+                    }
+                  }
+                ]
+              }
+              Transform {
+                translation -0.14 0 0
+                children [
+                  USE A
+                ]
+              }
+              Transform {
+                translation 0 0 0.14
+                children [
+                  USE A
+                ]
+              }
+              Transform {
+                translation 0 0 -0.14
+                children [
+                  USE A
                 ]
               }
             ]
